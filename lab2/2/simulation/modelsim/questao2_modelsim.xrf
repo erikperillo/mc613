@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, /home/ec2015/ra169767/prog/mc613/lab2/2/questao2_A.bdf
+source_file = 1, /home/ec2015/ra169767/prog/mc613/lab2/2/Waveform.vwf
+source_file = 1, /home/ec2015/ra169767/prog/mc613/lab2/2/db/questao2.cbx.xml
+design_name = questao2_A
+instance = comp, \B~I , B, questao2_A, 1
+instance = comp, \A~I , A, questao2_A, 1
+instance = comp, \C~I , C, questao2_A, 1
+instance = comp, \inst4~0 , inst4~0, questao2_A, 1
+instance = comp, \Y~I , Y, questao2_A, 1

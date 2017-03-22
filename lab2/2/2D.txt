@@ -1,0 +1,4 @@
+2D) O comportamento pode ser explicado pela divergência de tempos de percurso do circuito.
+O caminho crítico do circuito é dado pelos sinais que vêm das entradas A e B, que percorrem suas respectivas portas NOT, entrando então em conjunto em uma porta AND e, por último, numa porta OR, indo então para a saída.
+Enquanto isso, há um caminho mais curto, percorrido pelos sinais que entram nas portas B e C e se unem na porta AND subsequente, indo para a porta OR final.
+Como se pode notar, no caminho crítico há uma porta lógica (NOT) a mais. Apesar das entradas virem com sinais sincronizados e ocorrendo como previsto, essa diferença de percurso gera uma divergência no tempo de percurso até a porta final OR. Assim, dada essa divergência, ocorre o previsto na simulação de timing para o circuito.
