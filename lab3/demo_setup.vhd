@@ -1,5 +1,7 @@
 LIBRARY ieee ;
 USE ieee.std_logic_1164.all ;
+LIBRARY work;
+USE work.gray_display.all ;
 
 ENTITY demo_setup IS
 	PORT (SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0) ;
@@ -17,17 +19,10 @@ ENTITY demo_setup IS
 END demo_setup ;
 
 ARCHITECTURE Behavior OF demo_setup IS
+	SIGNAL m : STD_LOGIC_VECTOR(0 TO 3);
 BEGIN
-	WITH SW SELECT
-	HEX3 <= "0000001" WHEN "0000",
-		"1001111" WHEN "0001",
-		"0010010" WHEN "0010",
-		"0000110" WHEN "0011",
-		"1001100" WHEN "0100",
-		"0100100" WHEN "0101",
-		"0100000" WHEN "0110",
-		"0001111" WHEN "0111",
-		"0000000" WHEN "1000",
-		"0000100" WHEN "1001",
-		"0110000" WHEN OTHERS ;
+	gray: gray_to_bin PORT MAP
+		(SW(3 DOWNTO 0), m(0 TO 3));
+	display: conv7_seg PORT MAP
+		(m(0 TO 3), HEX3(0 TO 6));
 END Behavior ;
