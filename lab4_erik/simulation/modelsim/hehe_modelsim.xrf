@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, /home/ec2016/ra135582/proj/mc613/lab4_erik/crossbar_with_select_when.vhd
+source_file = 1, /home/ec2016/ra135582/proj/mc613/lab4_erik/db/hehe.cbx.xml
+source_file = 1, /opt/altera13sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, /opt/altera13sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, /opt/altera13sp1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, /opt/altera13sp1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = crossbar_with_select_when
+instance = comp, \s~I\, s, crossbar_with_select_when, 1
+instance = comp, \x1~I\, x1, crossbar_with_select_when, 1
+instance = comp, \x2~I\, x2, crossbar_with_select_when, 1
+instance = comp, \y1~0\, y1~0, crossbar_with_select_when, 1
+instance = comp, \y2~0\, y2~0, crossbar_with_select_when, 1
+instance = comp, \y1~I\, y1, crossbar_with_select_when, 1
+instance = comp, \y2~I\, y2, crossbar_with_select_when, 1
