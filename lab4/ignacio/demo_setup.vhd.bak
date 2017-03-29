@@ -1,0 +1,28 @@
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all ;
+LIBRARY work;
+USE work.gray_display.all ;
+
+ENTITY demo_setup IS
+	PORT (SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0) ;
+		KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0) ;
+		CLOCK_27: IN STD_LOGIC;
+		CLOCK_50: IN STD_LOGIC;
+		CLOCK_24: IN STD_LOGIC;
+		EXT_CLOCK: IN STD_LOGIC;
+		LEDR : OUT STD_LOGIC_VECTOR(0 TO 9) ;
+		LEDG : OUT STD_LOGIC_VECTOR(0 TO 7) ;
+		HEX0 : OUT STD_LOGIC_VECTOR(0 TO 6) ;
+		HEX1 : OUT STD_LOGIC_VECTOR(0 TO 6) ;
+		HEX2 : OUT STD_LOGIC_VECTOR(0 TO 6) ;
+		HEX3 : OUT STD_LOGIC_VECTOR(0 TO 6) );
+END demo_setup ;
+
+ARCHITECTURE Behavior OF demo_setup IS
+	SIGNAL m : STD_LOGIC_VECTOR(0 TO 3);
+BEGIN
+	gray: gray_to_bin PORT MAP
+		(SW(3 DOWNTO 0), m(0 TO 3));
+	display: conv7_seg PORT MAP
+		(m(0 TO 3), HEX3(0 TO 6));
+END Behavior ;
