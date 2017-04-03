@@ -1,0 +1,13 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY caixaPontilhada IS
+	PORT(w : IN STD_LOGIC_VECTOR(0 TO 3);
+			y : IN STD_LOGIC_VECTOR(0 TO 3);
+			f : out STD_LOGIC);
+END caixaPontilhada;
+
+ARCHITECTURE Behavior OF caixaPontilhada IS
+BEGIN
+	f <= (w(0) AND y(0)) OR (w(1) AND y(1)) OR (w(2) AND y(2)) OR (w(3) AND y(3));
+END Behavior;

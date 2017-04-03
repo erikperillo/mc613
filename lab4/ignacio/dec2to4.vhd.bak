@@ -1,0 +1,17 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY dec2to4 IS
+	PORT(w : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+			en : IN STD_LOGIC;
+			y : OUT STD_LOGIC_VECTOR(0 TO 3));
+END dec2to4;
+
+ARCHITECTURE Behavior OF dec2to4 IS
+BEGIN
+	y <= "0000" WHEN en = '0' ELSE
+			"1000" WHEN w = "00" ELSE
+			"0100" WHEN w = "01" ELSE
+			"0010" WHEN w = "10" ELSE
+			"0001" WHEN w = "11";
+END Behavior;

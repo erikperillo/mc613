@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4
-Wed Mar 29 18:05:03 2017
+Mon Apr  3 15:49:06 2017
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,7 +14,7 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: crossbarF:crossbars
+  9. Port Connectivity Checks: "mux4to1:mux1|dec2to4:decod"
  10. Elapsed Time Per Partition
  11. Analysis & Synthesis Messages
 
@@ -42,16 +42,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 29 18:05:03 2017           ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr  3 15:49:06 2017           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab4                                            ;
-; Top-level Entity Name              ; demo_setup                                      ;
+; Top-level Entity Name              ; mux16to1                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 4                                               ;
-;     Total combinational functions  ; 4                                               ;
+; Total logic elements               ; 14                                              ;
+;     Total combinational functions  ; 14                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 64                                              ;
+; Total pins                         ; 21                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -65,7 +65,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C20F484C7       ;                    ;
-; Top-level entity name                                                      ; demo_setup         ; lab4               ;
+; Top-level entity name                                                      ; mux16to1           ; lab4               ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -155,59 +155,57 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                        ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                 ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
-; demo_setup.vhd                   ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/demo_setup.vhd ;         ;
-; crossbarA.vhd                    ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/crossbarA.vhd  ;         ;
-; crossbarB.vhd                    ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/crossbarB.vhd  ;         ;
-; crossbarC.vhd                    ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/crossbarC.vhd  ;         ;
-; crossbarD.vhd                    ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/crossbarD.vhd  ;         ;
-; crossbarF.vhd                    ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/crossbarF.vhd  ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; dec2to4.vhd                      ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/dec2to4.vhd         ;         ;
+; caixaPontilhada.vhd              ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/caixaPontilhada.vhd ;         ;
+; mux4to1.vhd                      ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/mux4to1.vhd         ;         ;
+; mux16to1.vhd                     ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab4/ignacio/mux16to1.vhd        ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                     ;
-+---------------------------------------------+---------------------------------------------------+
-; Resource                                    ; Usage                                             ;
-+---------------------------------------------+---------------------------------------------------+
-; Estimated Total logic elements              ; 4                                                 ;
-;                                             ;                                                   ;
-; Total combinational functions               ; 4                                                 ;
-; Logic element usage by number of LUT inputs ;                                                   ;
-;     -- 4 input functions                    ; 4                                                 ;
-;     -- 3 input functions                    ; 0                                                 ;
-;     -- <=2 input functions                  ; 0                                                 ;
-;                                             ;                                                   ;
-; Logic elements by mode                      ;                                                   ;
-;     -- normal mode                          ; 4                                                 ;
-;     -- arithmetic mode                      ; 0                                                 ;
-;                                             ;                                                   ;
-; Total registers                             ; 0                                                 ;
-;     -- Dedicated logic registers            ; 0                                                 ;
-;     -- I/O registers                        ; 0                                                 ;
-;                                             ;                                                   ;
-; I/O pins                                    ; 64                                                ;
-; Embedded Multiplier 9-bit elements          ; 0                                                 ;
-; Maximum fan-out node                        ; crossbarF:crossbars|crossbarC:\G1:7:crossbar|y2~0 ;
-; Maximum fan-out                             ; 2                                                 ;
-; Total fan-out                               ; 18                                                ;
-; Average fan-out                             ; 0.26                                              ;
-+---------------------------------------------+---------------------------------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 14    ;
+;                                             ;       ;
+; Total combinational functions               ; 14    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 5     ;
+;     -- 3 input functions                    ; 9     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 14    ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 21    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; s[3]  ;
+; Maximum fan-out                             ; 8     ;
+; Total fan-out                               ; 48    ;
+; Average fan-out                             ; 1.37  ;
++---------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
-+----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
-; Compilation Hierarchy Node       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                      ; Library Name ;
-+----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
-; |demo_setup                      ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 64   ; 0            ; |demo_setup                                              ; work         ;
-;    |crossbarF:crossbars|         ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |demo_setup|crossbarF:crossbars                          ; work         ;
-;       |crossbarC:\G1:7:crossbar| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |demo_setup|crossbarF:crossbars|crossbarC:\G1:7:crossbar ; work         ;
-+----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                 ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
+; |mux16to1                   ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |mux16to1                                  ; work         ;
+;    |mux4to1:mux5|           ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux16to1|mux4to1:mux5                     ; work         ;
+;       |caixaPontilhada:box| ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux16to1|mux4to1:mux5|caixaPontilhada:box ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -226,14 +224,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: crossbarF:crossbars ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; n              ; 8     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++--------------------------------------------------------+
+; Port Connectivity Checks: "mux4to1:mux1|dec2to4:decod" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                 ;
++------+-------+----------+------------------------------+
 
 
 +-------------------------------+
@@ -241,7 +238,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -251,7 +248,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Mar 29 18:05:01 2017
+    Info: Processing started: Mon Apr  3 15:49:03 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file demo_setup.vhd
@@ -272,80 +269,36 @@ Info (12021): Found 2 design units, including 1 entities, in source file crossba
 Info (12021): Found 2 design units, including 1 entities, in source file crossbarF.vhd
     Info (12022): Found design unit 1: crossbarF-Behavior
     Info (12023): Found entity 1: crossbarF
-Info (12127): Elaborating entity "demo_setup" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at demo_setup.vhd(14): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at demo_setup.vhd(15): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at demo_setup.vhd(16): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at demo_setup.vhd(17): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at demo_setup.vhd(18): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10873): Using initial value X (don't care) for net "LEDR[0]" at demo_setup.vhd(13)
-Warning (10873): Using initial value X (don't care) for net "LEDR[3..9]" at demo_setup.vhd(13)
-Info (12128): Elaborating entity "crossbarF" for hierarchy "crossbarF:crossbars"
-Info (12128): Elaborating entity "crossbarC" for hierarchy "crossbarF:crossbars|crossbarC:\G1:0:crossbar"
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[7]" is stuck at GND
-    Warning (13410): Pin "LEDR[6]" is stuck at GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND
-    Warning (13410): Pin "LEDG[7]" is stuck at GND
-    Warning (13410): Pin "LEDG[6]" is stuck at GND
-    Warning (13410): Pin "LEDG[5]" is stuck at GND
-    Warning (13410): Pin "LEDG[4]" is stuck at GND
-    Warning (13410): Pin "LEDG[3]" is stuck at GND
-    Warning (13410): Pin "LEDG[2]" is stuck at GND
-    Warning (13410): Pin "LEDG[1]" is stuck at GND
-    Warning (13410): Pin "LEDG[0]" is stuck at GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND
-    Warning (13410): Pin "HEX0[5]" is stuck at GND
-    Warning (13410): Pin "HEX0[4]" is stuck at GND
-    Warning (13410): Pin "HEX0[3]" is stuck at GND
-    Warning (13410): Pin "HEX0[2]" is stuck at GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND
-    Warning (13410): Pin "HEX1[6]" is stuck at GND
-    Warning (13410): Pin "HEX1[5]" is stuck at GND
-    Warning (13410): Pin "HEX1[4]" is stuck at GND
-    Warning (13410): Pin "HEX1[3]" is stuck at GND
-    Warning (13410): Pin "HEX1[2]" is stuck at GND
-    Warning (13410): Pin "HEX1[1]" is stuck at GND
-    Warning (13410): Pin "HEX1[0]" is stuck at GND
-    Warning (13410): Pin "HEX2[6]" is stuck at GND
-    Warning (13410): Pin "HEX2[5]" is stuck at GND
-    Warning (13410): Pin "HEX2[4]" is stuck at GND
-    Warning (13410): Pin "HEX2[3]" is stuck at GND
-    Warning (13410): Pin "HEX2[2]" is stuck at GND
-    Warning (13410): Pin "HEX2[1]" is stuck at GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND
-    Warning (13410): Pin "HEX3[6]" is stuck at GND
-    Warning (13410): Pin "HEX3[5]" is stuck at GND
-    Warning (13410): Pin "HEX3[4]" is stuck at GND
-    Warning (13410): Pin "HEX3[3]" is stuck at GND
-    Warning (13410): Pin "HEX3[2]" is stuck at GND
-    Warning (13410): Pin "HEX3[1]" is stuck at GND
-    Warning (13410): Pin "HEX3[0]" is stuck at GND
+Info (12021): Found 3 design units, including 1 entities, in source file dec2to4.vhd
+    Info (12022): Found design unit 1: dec2to4_package
+    Info (12022): Found design unit 2: dec2to4-Behavior
+    Info (12023): Found entity 1: dec2to4
+Info (12021): Found 3 design units, including 1 entities, in source file caixaPontilhada.vhd
+    Info (12022): Found design unit 1: caixaPontilhada_package
+    Info (12022): Found design unit 2: caixaPontilhada-Behavior
+    Info (12023): Found entity 1: caixaPontilhada
+Info (12021): Found 3 design units, including 1 entities, in source file mux4to1.vhd
+    Info (12022): Found design unit 1: mux4to1_package
+    Info (12022): Found design unit 2: mux4to1-Behavior
+    Info (12023): Found entity 1: mux4to1
+Info (12021): Found 3 design units, including 1 entities, in source file mux16to1.vhd
+    Info (12022): Found design unit 1: mux16to1_package
+    Info (12022): Found design unit 2: mux16to1-Behavior
+    Info (12023): Found entity 1: mux16to1
+Info (12127): Elaborating entity "mux16to1" for the top level hierarchy
+Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux1"
+Info (12128): Elaborating entity "dec2to4" for hierarchy "mux4to1:mux1|dec2to4:decod"
+Info (12128): Elaborating entity "caixaPontilhada" for hierarchy "mux4to1:mux1|caixaPontilhada:box"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]"
-    Warning (15610): No output dependent on input pin "KEY[1]"
-    Warning (15610): No output dependent on input pin "KEY[2]"
-    Warning (15610): No output dependent on input pin "KEY[3]"
-    Warning (15610): No output dependent on input pin "CLOCK_27"
-    Warning (15610): No output dependent on input pin "CLOCK_50"
-    Warning (15610): No output dependent on input pin "CLOCK_24"
-    Warning (15610): No output dependent on input pin "EXT_CLOCK"
-Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
-    Info (21059): Implemented 46 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 62 warnings
-    Info: Peak virtual memory: 367 megabytes
-    Info: Processing ended: Wed Mar 29 18:05:03 2017
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+Info (21057): Implemented 35 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 14 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 372 megabytes
+    Info: Processing ended: Mon Apr  3 15:49:06 2017
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
