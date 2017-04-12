@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.all;
+
+entity ripple8 is
+
+end ripple8
+
+architecture Behaviour of ripple8 is
+begin
+end behaviour
