@@ -1,0 +1,4 @@
+O ripple-carry de 32 bits tem um atraso 4 vezes o atraso do de 4 bits.
+O de 64 tem um atraso de 2 vezes o de 32 bits.
+Isso faz sentido, tendo em vista que o sinal viaja por todos os bits antes de
+se ter um resultado e então o tempo é proporcional ao número de bits.
