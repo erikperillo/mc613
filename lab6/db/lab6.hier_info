@@ -1,0 +1,71 @@
+|barrelShifter4
+w[0] => mux4to1:stage0.w0
+w[0] => mux4to1:stage1.w3
+w[0] => mux4to1:stage2.w2
+w[0] => mux4to1:stage3.w1
+w[1] => mux4to1:stage0.w1
+w[1] => mux4to1:stage1.w0
+w[1] => mux4to1:stage2.w3
+w[1] => mux4to1:stage3.w2
+w[2] => mux4to1:stage0.w2
+w[2] => mux4to1:stage1.w1
+w[2] => mux4to1:stage2.w0
+w[2] => mux4to1:stage3.w3
+w[3] => mux4to1:stage0.w3
+w[3] => mux4to1:stage1.w2
+w[3] => mux4to1:stage2.w1
+w[3] => mux4to1:stage3.w0
+s[0] => mux4to1:stage0.s[0]
+s[0] => mux4to1:stage1.s[0]
+s[0] => mux4to1:stage2.s[0]
+s[0] => mux4to1:stage3.s[0]
+s[1] => mux4to1:stage0.s[1]
+s[1] => mux4to1:stage1.s[1]
+s[1] => mux4to1:stage2.s[1]
+s[1] => mux4to1:stage3.s[1]
+y[0] <= mux4to1:stage0.f
+y[1] <= mux4to1:stage1.f
+y[2] <= mux4to1:stage2.f
+y[3] <= mux4to1:stage3.f
+
+
+|barrelShifter4|mux4to1:stage0
+s[0] => Mux0.IN1
+s[1] => Mux0.IN0
+w0 => Mux0.IN2
+w1 => Mux0.IN3
+w2 => Mux0.IN4
+w3 => Mux0.IN5
+f <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|barrelShifter4|mux4to1:stage1
+s[0] => Mux0.IN1
+s[1] => Mux0.IN0
+w0 => Mux0.IN2
+w1 => Mux0.IN3
+w2 => Mux0.IN4
+w3 => Mux0.IN5
+f <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|barrelShifter4|mux4to1:stage2
+s[0] => Mux0.IN1
+s[1] => Mux0.IN0
+w0 => Mux0.IN2
+w1 => Mux0.IN3
+w2 => Mux0.IN4
+w3 => Mux0.IN5
+f <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|barrelShifter4|mux4to1:stage3
+s[0] => Mux0.IN1
+s[1] => Mux0.IN0
+w0 => Mux0.IN2
+w1 => Mux0.IN3
+w2 => Mux0.IN4
+w3 => Mux0.IN5
+f <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
