@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab6
-Tue Apr 25 12:41:01 2017
+Tue Apr 25 13:28:58 2017
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -41,16 +41,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 25 12:41:01 2017           ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 25 13:28:55 2017           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab6                                            ;
-; Top-level Entity Name              ; barrelShifter4                                  ;
+; Top-level Entity Name              ; CLA4                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 8                                               ;
-;     Total combinational functions  ; 8                                               ;
+; Total logic elements               ; 6                                               ;
+;     Total combinational functions  ; 6                                               ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 10                                              ;
+; Total pins                         ; 12                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C20F484C7       ;                    ;
-; Top-level entity name                                                      ; barrelShifter4     ; lab6               ;
+; Top-level entity name                                                      ; CLA4               ; lab6               ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -159,9 +159,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; fullAdder.vhd                    ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab6/fullAdder.vhd      ;         ;
 ; demo_setup.vhd                   ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab6/demo_setup.vhd     ;         ;
 ; mux4to1.vhd                      ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab6/mux4to1.vhd        ;         ;
 ; barrelShifter4.vhd               ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab6/barrelShifter4.vhd ;         ;
+; CLA4.vhd                         ; yes             ; User VHDL File  ; /home/ec2015/ra169767/prog/mc613/lab6/CLA4.vhd           ;         ;
 +----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
 
 
@@ -170,42 +172,42 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 8     ;
+; Estimated Total logic elements              ; 6     ;
 ;                                             ;       ;
-; Total combinational functions               ; 8     ;
+; Total combinational functions               ; 6     ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 8     ;
-;     -- <=2 input functions                  ; 0     ;
+;     -- 4 input functions                    ; 2     ;
+;     -- 3 input functions                    ; 3     ;
+;     -- <=2 input functions                  ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 8     ;
+;     -- normal mode                          ; 6     ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
 ;     -- Dedicated logic registers            ; 0     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 10    ;
+; I/O pins                                    ; 12    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; s[1]  ;
-; Maximum fan-out                             ; 4     ;
-; Total fan-out                               ; 28    ;
-; Average fan-out                             ; 1.56  ;
+; Maximum fan-out node                        ; x[0]  ;
+; Maximum fan-out                             ; 3     ;
+; Total fan-out                               ; 23    ;
+; Average fan-out                             ; 1.28  ;
 +---------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
-; |barrelShifter4            ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |barrelShifter4                ; work         ;
-;    |mux4to1:stage0|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |barrelShifter4|mux4to1:stage0 ; work         ;
-;    |mux4to1:stage1|        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |barrelShifter4|mux4to1:stage1 ; work         ;
-;    |mux4to1:stage2|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |barrelShifter4|mux4to1:stage2 ; work         ;
-;    |mux4to1:stage3|        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |barrelShifter4|mux4to1:stage3 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                            ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
+; |CLA4                      ; 6 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |CLA4                  ; work         ;
+;    |fullAdder:stage0|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CLA4|fullAdder:stage0 ; work         ;
+;    |fullAdder:stage1|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CLA4|fullAdder:stage1 ; work         ;
+;    |fullAdder:stage2|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CLA4|fullAdder:stage2 ; work         ;
+;    |fullAdder:stage3|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CLA4|fullAdder:stage3 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -229,7 +231,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -239,9 +241,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Apr 25 12:40:57 2017
+    Info: Processing started: Tue Apr 25 13:28:31 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab6 -c lab6
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file fullAdder.vhd
+    Info (12022): Found design unit 1: fullAdder-Behaviour
+    Info (12023): Found entity 1: fullAdder
 Info (12021): Found 2 design units, including 1 entities, in source file demo_setup.vhd
     Info (12022): Found design unit 1: demo_setup-Comportamento
     Info (12023): Found entity 1: demo_setup
@@ -252,18 +257,21 @@ Info (12021): Found 3 design units, including 1 entities, in source file mux4to1
 Info (12021): Found 2 design units, including 1 entities, in source file barrelShifter4.vhd
     Info (12022): Found design unit 1: barrelShifter4-Behaviour
     Info (12023): Found entity 1: barrelShifter4
-Info (12127): Elaborating entity "barrelShifter4" for the top level hierarchy
-Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:stage0"
+Info (12021): Found 2 design units, including 1 entities, in source file CLA4.vhd
+    Info (12022): Found design unit 1: CLA4-Behaviour
+    Info (12023): Found entity 1: CLA4
+Info (12127): Elaborating entity "CLA4" for the top level hierarchy
+Info (12128): Elaborating entity "fullAdder" for hierarchy "fullAdder:stage0"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 18 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
+    Info (21058): Implemented 8 input pins
     Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 8 logic cells
+    Info (21061): Implemented 6 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 371 megabytes
-    Info: Processing ended: Tue Apr 25 12:41:01 2017
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 364 megabytes
+    Info: Processing ended: Tue Apr 25 13:29:00 2017
+    Info: Elapsed time: 00:00:29
     Info: Total CPU time (on all processors): 00:00:02
 
 

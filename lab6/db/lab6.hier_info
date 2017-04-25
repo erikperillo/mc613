@@ -1,71 +1,74 @@
-|barrelShifter4
-w[0] => mux4to1:stage0.w0
-w[0] => mux4to1:stage1.w3
-w[0] => mux4to1:stage2.w2
-w[0] => mux4to1:stage3.w1
-w[1] => mux4to1:stage0.w1
-w[1] => mux4to1:stage1.w0
-w[1] => mux4to1:stage2.w3
-w[1] => mux4to1:stage3.w2
-w[2] => mux4to1:stage0.w2
-w[2] => mux4to1:stage1.w1
-w[2] => mux4to1:stage2.w0
-w[2] => mux4to1:stage3.w3
-w[3] => mux4to1:stage0.w3
-w[3] => mux4to1:stage1.w2
-w[3] => mux4to1:stage2.w1
-w[3] => mux4to1:stage3.w0
-s[0] => mux4to1:stage0.s[0]
-s[0] => mux4to1:stage1.s[0]
-s[0] => mux4to1:stage2.s[0]
-s[0] => mux4to1:stage3.s[0]
-s[1] => mux4to1:stage0.s[1]
-s[1] => mux4to1:stage1.s[1]
-s[1] => mux4to1:stage2.s[1]
-s[1] => mux4to1:stage3.s[1]
-y[0] <= mux4to1:stage0.f
-y[1] <= mux4to1:stage1.f
-y[2] <= mux4to1:stage2.f
-y[3] <= mux4to1:stage3.f
+|CLA4
+x[0] => aux_c[0].IN0
+x[0] => aux_c.IN0
+x[0] => aux_c.IN0
+x[0] => aux_c.IN0
+x[0] => fulladder:stage0.x
+x[1] => aux_c.IN0
+x[1] => aux_c.IN0
+x[1] => aux_c.IN0
+x[1] => aux_c.IN0
+x[1] => aux_c.IN0
+x[1] => aux_c.IN0
+x[1] => fulladder:stage1.x
+x[2] => aux_c.IN0
+x[2] => aux_c.IN0
+x[2] => aux_c.IN0
+x[2] => aux_c.IN0
+x[2] => aux_c.IN1
+x[2] => fulladder:stage2.x
+x[3] => aux_c.IN0
+x[3] => fulladder:stage3.x
+y[0] => aux_c[0].IN1
+y[0] => aux_c.IN1
+y[0] => aux_c.IN1
+y[0] => aux_c.IN1
+y[0] => fulladder:stage0.y
+y[1] => aux_c.IN1
+y[1] => aux_c.IN1
+y[1] => aux_c.IN1
+y[1] => aux_c.IN1
+y[1] => aux_c.IN1
+y[1] => aux_c.IN1
+y[1] => fulladder:stage1.y
+y[2] => aux_c.IN1
+y[2] => aux_c.IN1
+y[2] => aux_c.IN1
+y[2] => aux_c.IN1
+y[2] => fulladder:stage2.y
+y[3] => aux_c.IN1
+y[3] => fulladder:stage3.y
+s[0] <= fulladder:stage0.signal_out
+s[1] <= fulladder:stage1.signal_out
+s[2] <= fulladder:stage2.signal_out
+s[3] <= fulladder:stage3.signal_out
 
 
-|barrelShifter4|mux4to1:stage0
-s[0] => Mux0.IN1
-s[1] => Mux0.IN0
-w0 => Mux0.IN2
-w1 => Mux0.IN3
-w2 => Mux0.IN4
-w3 => Mux0.IN5
-f <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+|CLA4|fullAdder:stage0
+x => signal_out.IN0
+y => signal_out.IN1
+carry_in => signal_out.IN1
+signal_out <= signal_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrelShifter4|mux4to1:stage1
-s[0] => Mux0.IN1
-s[1] => Mux0.IN0
-w0 => Mux0.IN2
-w1 => Mux0.IN3
-w2 => Mux0.IN4
-w3 => Mux0.IN5
-f <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+|CLA4|fullAdder:stage1
+x => signal_out.IN0
+y => signal_out.IN1
+carry_in => signal_out.IN1
+signal_out <= signal_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrelShifter4|mux4to1:stage2
-s[0] => Mux0.IN1
-s[1] => Mux0.IN0
-w0 => Mux0.IN2
-w1 => Mux0.IN3
-w2 => Mux0.IN4
-w3 => Mux0.IN5
-f <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+|CLA4|fullAdder:stage2
+x => signal_out.IN0
+y => signal_out.IN1
+carry_in => signal_out.IN1
+signal_out <= signal_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrelShifter4|mux4to1:stage3
-s[0] => Mux0.IN1
-s[1] => Mux0.IN0
-w0 => Mux0.IN2
-w1 => Mux0.IN3
-w2 => Mux0.IN4
-w3 => Mux0.IN5
-f <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+|CLA4|fullAdder:stage3
+x => signal_out.IN0
+y => signal_out.IN1
+carry_in => signal_out.IN1
+signal_out <= signal_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
